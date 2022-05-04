@@ -7,99 +7,103 @@
 </head>
    <body>
       <title>Churn Prediction</title>
-	  <div class="container">
-		<div class="row">
 
-		  <form action="/" method="POST">
-		  	<div class="col-sm-9">
-			 <div class="form-group  purple-border">
-				  <label for="comment">SeniorCitizen4:</label>
-				  <textarea class="form-control" rows="2" id="query1" name="query1" placeholder="tset2" rows="2" cols="5" autofocus>{{query1}}</textarea>
+	  <div class="container pt-3">
+		<p class="h2">Customer Churn Model</p>
+		<p class="h5">Fundamental Programing</p>
+		<hr class="solid">
+		<form class="row g-3" action="/" method="POST">
+			<div class="col-md-6 pt-2">
+			  <label for="comment" class="form-label">SeniorCitizen</label>
+			  <textarea class="form-control" rows="1" id="query1" name="query1" placeholder="0" rows="1" cols="5" autofocus>{{query1}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">MonthlyCharges:</label>
-				  <input class="form-control" rows="2" id="query2" name="query2" value="query1" rows="2" cols="5" autofocus>{{query2}}</input>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">MonthlyCharges</label>
+				<textarea class="form-control" rows="1" id="query2" name="query2" placeholder="1.00" rows="1" cols="5" autofocus>{{query2}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">TotalCharges:</label>
-				  <input class="form-control" rows="2" id="query3" name="query3" rows="2" cols="5" autofocus>{{query3}}</input>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">TotalCharges</label>
+				<textarea class="form-control" rows="1" id="query3" name="query3" placeholder="2.00" rows="1" cols="5" autofocus>{{query3}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">gender:</label>
-				  <textarea class="form-control" rows="2" id="query4" name="query4" rows="2" cols="5" autofocus>{{query4}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">Gender</label>
+				<textarea class="form-control" rows="1" id="query4" name="query4" placeholder="Female" rows="1" cols="5" autofocus>{{query4}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">Partner:</label>
-				  <textarea class="form-control" rows="2" id="query5" name="query5" rows="2" cols="5" autofocus>{{query5}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">Partner</label>
+				<textarea class="form-control" rows="1" id="query5" name="query5" placeholder="Yes" rows="1" cols="5" autofocus>{{query5}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">Dependents:</label>
-				  <textarea class="form-control" rows="2" id="query6" name="query6" rows="2" cols="5" autofocus>{{query6}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">Dependents</label>
+				<textarea class="form-control" rows="1" id="query6" name="query6" placeholder="No" rows="1" cols="5" autofocus>{{query6}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">PhoneService:</label>
-				  <textarea class="form-control" rows="2" id="query7" name="query7" rows="2" cols="5" autofocus>{{query7}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">PhoneService</label>
+				<textarea class="form-control" rows="1" id="query7" name="query7" placeholder="No" rows="1" cols="5" autofocus>{{query7}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">MultipleLines:</label>
-				  <textarea class="form-control" rows="2" id="query8" name="query8" rows="2" cols="5" autofocus>{{query8}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">MultipleLines</label>
+				<textarea class="form-control" rows="1" id="query8" name="query8" placeholder="No phone service" rows="1" cols="5" autofocus>{{query8}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">InternetService:</label>
-				  <textarea class="form-control" rows="2" id="query9" name="query9" rows="2" cols="5" autofocus>{{query9}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">InternetService</label>
+				<textarea class="form-control" rows="1" id="query9" name="query9" placeholder="DSL" rows="1" cols="5" autofocus>{{query9}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">OnlineSecurity:</label>
-				  <textarea class="form-control" rows="2" id="query10" name="query10" rows="2" cols="5" autofocus>{{query10}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">OnlineSecurity</label>
+				<textarea class="form-control" rows="1" id="query10" name="query10" placeholder="Yes" rows="1" cols="5" autofocus>{{query10}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">OnlineBackup:</label>
-				  <textarea class="form-control" rows="2" id="query11" name="query11" rows="2" cols="5" autofocus>{{query11}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">OnlineBackup</label>
+				<textarea class="form-control" rows="1" id="query11" name="query11" placeholder="Yes" rows="1" cols="5" autofocus>{{query11}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">DeviceProtection:</label>
-				  <textarea class="form-control" rows="2" id="query12" name="query12" rows="2" cols="5" autofocus>{{query12}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">DeviceProtection</label>
+				<textarea class="form-control" rows="1" id="query12" name="query12" placeholder="Yes" rows="1" cols="5" autofocus>{{query12}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">TechSupport:</label>
-				  <textarea class="form-control" rows="2" id="query13" name="query13" rows="2" cols="5" autofocus>{{query13}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">TechSupport</label>
+				<textarea class="form-control" rows="1" id="query13" name="query13" placeholder="Yes" rows="1" cols="5" autofocus>{{query13}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">StreamingTV:</label>
-				  <textarea class="form-control" rows="2" id="query14" name="query14" rows="2" cols="5" autofocus>{{query14}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">StreamingTV</label>
+				<textarea class="form-control" rows="1" id="query14" name="query14" placeholder="Yes" rows="1" cols="5" autofocus>{{query14}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">StreamingMovies:</label>
-				  <textarea class="form-control" rows="2" id="query15" name="query15" rows="2" cols="5" autofocus>{{query15}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">StreamingMovies</label>
+				<textarea class="form-control" rows="1" id="query15" name="query15" placeholder="Yes" rows="1" cols="5" autofocus>{{query15}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">Contract:</label>
-				  <textarea class="form-control" rows="2" id="query16" name="query16" rows="2" cols="5" autofocus>{{query16}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">Contract</label>
+				<textarea class="form-control" rows="1" id="query16" name="query16" placeholder="One year" rows="1" cols="5" autofocus>{{query16}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">PaperlessBilling:</label>
-				  <textarea class="form-control" rows="2" id="query17" name="query17" rows="2" cols="5" autofocus>{{query17}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">PaperlessBilling</label>
+				<textarea class="form-control" rows="1" id="query17" name="query17" placeholder="Yes" rows="1" cols="5" autofocus>{{query17}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">PaymentMethod:</label>
-				  <textarea class="form-control" rows="2" id="query18" name="query18" rows="2" cols="5" autofocus>{{query18}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">PaymentMethod</label>
+				<textarea class="form-control" rows="1" id="query18" name="query18" placeholder="Electronic check" rows="1" cols="5" autofocus>{{query18}}</textarea>
 			</div>
-			<div class="form-group  purple-border">
-				  <label for="comment">tenure:</label>
-				  <textarea class="form-control" rows="2" id="query19" name="query19" rows="2" cols="5" autofocus>{{query19}}</textarea>
+			<div class="col-md-6 pt-2">
+				<label for="comment" class="form-label">tenure</label>
+				<textarea class="form-control" rows="1" id="query19" name="query19" placeholder="1" rows="1" cols="5" autofocus>{{query19}}</textarea>
 			</div>
+
+			<div class="d-grid gap-2 col-9 mx-auto">
+			  <button type="submit" class="btn btn-primary btn-lg" name="submit">PREDICT</button>
 			</div>
-			<div class="col-sm-3">
-			<button type="submit" class="btn btn-primary" name="submit">SUBMIT</button>
-			</div>
-		  </form>
-		  </div>
+		</form>
 		  
+		<hr class="solid">
+
 		<div class="row"> 
-			<div class="col-sm-9">
-			<textarea class="form-control" rows="2" id="comment" name="query6" rows="2" cols="5" autofocus>{{output1}}</textarea>
-			<textarea class="form-control" rows="2" id="comment" name="query7" rows="2" cols="5" autofocus>{{output2}}</textarea>
+			<p class="h5">Predict Result</p>
+			<div class="col-md-12 mx-auto">
+				<button type="button" class="btn btn-secondary btn-lg" style="width: 49%;" disabled>{{output1}}</button>
+				<button type="button" class="btn btn-secondary btn-lg" style="width: 49%;" disabled>{{output2}}</button>
 			</div>
+
 		</div>
 	</div>		
    </body>
