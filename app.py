@@ -41,25 +41,25 @@ def predict():
     '''
     
 
-    inputQuery1 = request.form['query1'] if request.form['query1'] != "" else 0
-    inputQuery2 = request.form['query2'] if request.form['query2'] != "" else 1.00
-    inputQuery3 = request.form['query3'] if request.form['query3'] != "" else 2.00
+    inputQuery1 = int(request.form['query1']) if request.form['query1'] != "" else 1
+    inputQuery2 = float(request.form['query2']) if request.form['query2'] != "" else 104.80
+    inputQuery3 = float(request.form['query3']) if request.form['query3'] != "" else 3046.05
     inputQuery4 = request.form['query4'] if request.form['query4'] != "" else "Female"
     inputQuery5 = request.form['query5'] if request.form['query5'] != "" else "Yes"
-    inputQuery6 = request.form['query6'] if request.form['query6'] != "" else "No"
-    inputQuery7 = request.form['query7'] if request.form['query7'] != "" else "No"
-    inputQuery8 = request.form['query8'] if request.form['query8'] != "" else "No phone service"
-    inputQuery9 = request.form['query9'] if request.form['query9'] != "" else "DSL"
-    inputQuery10 = request.form['query10'] if request.form['query10'] != "" else "Yes"
-    inputQuery11 = request.form['query11'] if request.form['query11'] != "" else "Yes"
+    inputQuery6 = request.form['query6'] if request.form['query6'] != "" else "Yes"
+    inputQuery7 = request.form['query7'] if request.form['query7'] != "" else "Yes"
+    inputQuery8 = request.form['query8'] if request.form['query8'] != "" else "Yes"
+    inputQuery9 = request.form['query9'] if request.form['query9'] != "" else "Fiber optic"
+    inputQuery10 = request.form['query10'] if request.form['query10'] != "" else "No"
+    inputQuery11 = request.form['query11'] if request.form['query11'] != "" else "No"
     inputQuery12 = request.form['query12'] if request.form['query12'] != "" else "Yes"
     inputQuery13 = request.form['query13'] if request.form['query13'] != "" else "Yes"
     inputQuery14 = request.form['query14'] if request.form['query14'] != "" else "Yes"
     inputQuery15 = request.form['query15'] if request.form['query15'] != "" else "Yes"
-    inputQuery16 = request.form['query16'] if request.form['query16'] != "" else "One year"
+    inputQuery16 = request.form['query16'] if request.form['query16'] != "" else "Month-to-month"
     inputQuery17 = request.form['query17'] if request.form['query17'] != "" else "Yes"
     inputQuery18 = request.form['query18'] if request.form['query18'] != "" else "Electronic check"
-    inputQuery19 = request.form['query19'] if request.form['query19'] != "" else 1
+    inputQuery19 = int(request.form['query19']) if request.form['query19'] != "" else 28
 
     model = pickle.load(open("model/model.sav", "rb"))
     
@@ -98,10 +98,10 @@ def predict():
     
     if single==1:
         o1 = "This customer is likely to be churned!!"
-        o2 = "Confidence: {}".format(probablity*100)
+        o2 = "Confidence: {}".format(probablity)
     else:
         o1 = "This customer is likely to continue!!"
-        o2 = "Confidence: {}".format(probablity*100)
+        o2 = "Confidence: {}".format(probablity)
         
     return render_template('home.html', output1=o1, output2=o2, 
                            query1 = request.form['query1'], 
