@@ -41,35 +41,32 @@ def predict():
     '''
     
 
-    
-    inputQuery1 = request.form['query1']
-    inputQuery2 = request.form['query2']
-    inputQuery3 = request.form['query3']
-    inputQuery4 = request.form['query4']
-    inputQuery5 = request.form['query5']
-    inputQuery6 = request.form['query6']
-    inputQuery7 = request.form['query7']
-    inputQuery8 = request.form['query8']
-    inputQuery9 = request.form['query9']
-    inputQuery10 = request.form['query10']
-    inputQuery11 = request.form['query11']
-    inputQuery12 = request.form['query12']
-    inputQuery13 = request.form['query13']
-    inputQuery14 = request.form['query14']
-    inputQuery15 = request.form['query15']
-    inputQuery16 = request.form['query16']
-    inputQuery17 = request.form['query17']
-    inputQuery18 = request.form['query18']
-    inputQuery19 = request.form['query19']
+    inputQuery1 = request.form['query1'] if request.form['query1'] != "" else 0
+    inputQuery2 = request.form['query2'] if request.form['query2'] != "" else 1.00
+    inputQuery3 = request.form['query3'] if request.form['query3'] != "" else 2.00
+    inputQuery4 = request.form['query4'] if request.form['query4'] != "" else "Female"
+    inputQuery5 = request.form['query5'] if request.form['query5'] != "" else "Yes"
+    inputQuery6 = request.form['query6'] if request.form['query6'] != "" else "No"
+    inputQuery7 = request.form['query7'] if request.form['query7'] != "" else "No"
+    inputQuery8 = request.form['query8'] if request.form['query8'] != "" else "No phone service"
+    inputQuery9 = request.form['query9'] if request.form['query9'] != "" else "DSL"
+    inputQuery10 = request.form['query10'] if request.form['query10'] != "" else "Yes"
+    inputQuery11 = request.form['query11'] if request.form['query11'] != "" else "Yes"
+    inputQuery12 = request.form['query12'] if request.form['query12'] != "" else "Yes"
+    inputQuery13 = request.form['query13'] if request.form['query13'] != "" else "Yes"
+    inputQuery14 = request.form['query14'] if request.form['query14'] != "" else "Yes"
+    inputQuery15 = request.form['query15'] if request.form['query15'] != "" else "Yes"
+    inputQuery16 = request.form['query16'] if request.form['query16'] != "" else "One year"
+    inputQuery17 = request.form['query17'] if request.form['query17'] != "" else "Yes"
+    inputQuery18 = request.form['query18'] if request.form['query18'] != "" else "Electronic check"
+    inputQuery19 = request.form['query19'] if request.form['query19'] != "" else 1
 
     model = pickle.load(open("model/model.sav", "rb"))
     
-#     data = [[inputQuery1, inputQuery2, inputQuery3, inputQuery4, inputQuery5, inputQuery6, inputQuery7, 
-#              inputQuery8, inputQuery9, inputQuery10, inputQuery11, inputQuery12, inputQuery13, inputQuery14,
-#              inputQuery15, inputQuery16, inputQuery17, inputQuery18, inputQuery19]]
-    data = [[0, 1.00, 2.00, "Female", "Yes", "No", "No", 
-         "No phone service", "DSL", "Yes", "Yes", "Yes", "Yes", "Yes",
-         "Yes", "One year", "Yes", "Electronic check",1]]
+    data = [[inputQuery1, inputQuery2, inputQuery3, inputQuery4, inputQuery5, inputQuery6, inputQuery7, 
+             inputQuery8, inputQuery9, inputQuery10, inputQuery11, inputQuery12, inputQuery13, inputQuery14,
+             inputQuery15, inputQuery16, inputQuery17, inputQuery18, inputQuery19]]
+
     
     new_df = pd.DataFrame(data, columns = ['SeniorCitizen', 'MonthlyCharges', 'TotalCharges', 'gender', 
                                            'Partner', 'Dependents', 'PhoneService', 'MultipleLines', 'InternetService',
@@ -94,7 +91,6 @@ def predict():
        'Contract', 'PaperlessBilling', 'PaymentMethod','tenure_group'])
     
     new_df__dummies = new_df__dummies.drop('Unnamed: 0',axis=1)
-    #final_df=pd.concat([new_df__dummies, new_dummy], axis=1)
         
     
     single = model.predict(new_df__dummies.tail(1))
