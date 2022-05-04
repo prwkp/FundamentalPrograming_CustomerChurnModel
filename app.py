@@ -63,9 +63,9 @@ def predict():
 
     model = pickle.load(open("model/model.sav", "rb"))
     
-    data = [[inputQuery1, inputQuery2, inputQuery3, inputQuery4, inputQuery5, inputQuery6, inputQuery7, 
-             inputQuery8, inputQuery9, inputQuery10, inputQuery11, inputQuery12, inputQuery13, inputQuery14,
-             inputQuery15, inputQuery16, inputQuery17, inputQuery18, inputQuery19]]
+    data = [[inputQuery1, inputQuery2, inputQuery3, inputQuery4.strip(), inputQuery5.strip(), inputQuery6.strip(), inputQuery7.strip(), 
+             inputQuery8.strip(), inputQuery9.strip(), inputQuery10.strip(), inputQuery11.strip(), inputQuery12.strip(), inputQuery13.strip(), inputQuery14.strip(),
+             inputQuery15.strip(), inputQuery16.strip(), inputQuery17.strip(), inputQuery18.strip(), inputQuery19]]
 
     
     new_df = pd.DataFrame(data, columns = ['SeniorCitizen', 'MonthlyCharges', 'TotalCharges', 'gender', 
