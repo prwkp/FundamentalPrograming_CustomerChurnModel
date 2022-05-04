@@ -136,9 +136,18 @@
 #     app.run(debug=False)
 
 
-from flask import Flask, jsonify
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier 
+from sklearn import metrics
+from flask import Flask, request, render_template, jsonify
+import pickle
 
 app = Flask(__name__)
+
+df_1=pd.read_csv("csv/first_telc.csv")
+
+
 
 data = [
         {
@@ -158,9 +167,9 @@ data = [
         }
     ]
 
-@app.route('/')
-def hello():
-    return "Hello Flask-Heroku"
+@app.route("/")
+def loadPage():
+	return render_template('home.html', query="")
 
 
 @app.route('/api', methods=['GET'])
